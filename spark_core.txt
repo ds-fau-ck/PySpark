@@ -23,4 +23,10 @@ schema = StructType([ \
  df.show(truncate=False)
  
  df.printSchema()
+
+################Reading CSV file from hdfs#####################
+df1=spark.read.option("header",True).csv("/input_data/department.csv")
+#######if the spark environment at different place
+df1=spark.read.option("header",True).csv("hdfs://namenode:8080/input_data/department.csv")
+
  

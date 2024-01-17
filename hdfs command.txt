@@ -1,1 +1,5 @@
 
+hadoop fs -ls /
+hadoop fs -mkdir /input_data
+haddop fs -ls /
+hadoop fs -put department.csv /input_data

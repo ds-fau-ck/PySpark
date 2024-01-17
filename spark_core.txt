@@ -24,9 +24,26 @@ schema = StructType([ \
  
  df.printSchema()
 
-################Reading CSV file from hdfs#####################
+################Reading CSV file from hdfs path#####################
 df1=spark.read.option("header",True).csv("/input_data/department.csv")
+>>> df1=spark.read.option("header", True).csv("/input_data/departments.csv")
+>>> df1.printSchema()
+root
+ |-- DEPARTMENT_ID: string (nullable = true)
+ |-- DEPARTMENT_NAME: string (nullable = true)
+ |-- MANAGER_ID: string (nullable = true)
+ |-- LOCATION_ID: string (nullable = true)
 #######if the spark environment at different place
 df1=spark.read.option("header",True).csv("hdfs://namenode:8080/input_data/department.csv")
+
+
+df2=spark.read.option("header",True).option("inferSchema",True).csv("/input_data/department.csv")
+>>> df2=spark.read.option("header", True).option("inferSchema",True).csv("/input_data/departments.csv")>>> df1.printSchema()
+root
+ |-- DEPARTMENT_ID: integer (nullable = true)
+ |-- DEPARTMENT_NAME: string (nullable = true)
+ |-- MANAGER_ID: string (nullable = true)
+ |-- LOCATION_ID: integer (nullable = true)
+
 
  

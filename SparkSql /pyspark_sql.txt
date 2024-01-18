@@ -252,3 +252,69 @@ only showing top 20 rows
 |        110|      John|     Chen|   JCHEN|515.124.4269|28-SEP-05|FI_ACCOUNT|  8200|       108|          100|
 +-----------+----------+---------+--------+------------+---------+----------+------+----------+-------------+
 only showing top 20 rows
+###Filter Condition####
+>>> empDf.filter(col("SALARY")<5000).show(50)
++-----------+----------+-----------+--------+------------+---------+--------+------+--------------+----------+-------------+
+|EMPLOYEE_ID|FIRST_NAME|  LAST_NAME|   EMAIL|PHONE_NUMBER|HIRE_DATE|  JOB_ID|SALARY|COMMISSION_PCT|MANAGER_ID|DEPARTMENT_ID|
++-----------+----------+-----------+--------+------------+---------+--------+------+--------------+----------+-------------+
+|        198|    Donald|   OConnell|DOCONNEL|650.507.9833|21-JUN-07|SH_CLERK|  2600|            - |       124|           50|
+|        199|   Douglas|      Grant|  DGRANT|650.507.9844|13-JAN-08|SH_CLERK|  2600|            - |       124|           50|
+|        200|  Jennifer|     Whalen| JWHALEN|515.123.4444|17-SEP-03| AD_ASST|  4400|            - |       101|           10|
+|        105|     David|     Austin| DAUSTIN|590.423.4569|25-JUN-05| IT_PROG|  4800|            - |       103|           60|
+|        106|     Valli|  Pataballa|VPATABAL|590.423.4560|05-FEB-06| IT_PROG|  4800|            - |       103|           60|
+|        107|     Diana|    Lorentz|DLORENTZ|590.423.5567|07-FEB-07| IT_PROG|  4200|            - |       103|           60|
+|        115| Alexander|       Khoo|   AKHOO|515.127.4562|18-MAY-03|PU_CLERK|  3100|            - |       114|           30|
+|        116|    Shelli|      Baida|  SBAIDA|515.127.4563|24-DEC-05|PU_CLERK|  2900|            - |       114|           30|
+|        117|     Sigal|     Tobias| STOBIAS|515.127.4564|24-JUL-05|PU_CLERK|  2800|            - |       114|           30|
+|        118|       Guy|     Himuro| GHIMURO|515.127.4565|15-NOV-06|PU_CLERK|  2600|            - |       114|           30|
+|        119|     Karen| Colmenares|KCOLMENA|515.127.4566|10-AUG-07|PU_CLERK|  2500|            - |       114|           30|
+|        125|     Julia|      Nayer|  JNAYER|650.124.1214|16-JUL-05|ST_CLERK|  3200|            - |       120|           50|
+|        126|     Irene|Mikkilineni|IMIKKILI|650.124.1224|28-SEP-06|ST_CLERK|  2700|            - |       120|           50|
+|        127|     James|     Landry| JLANDRY|650.124.1334|14-JAN-07|ST_CLERK|  2400|            - |       120|           50|
+|        128|    Steven|     Markle| SMARKLE|650.124.1434|08-MAR-08|ST_CLERK|  2200|            - |       120|           50|
+|        129|     Laura|     Bissot| LBISSOT|650.124.5234|20-AUG-05|ST_CLERK|  3300|            - |       121|           50|
+|        130|     Mozhe|   Atkinson|MATKINSO|650.124.6234|30-OCT-05|ST_CLERK|  2800|            - |       121|           50|
+|        131|     James|     Marlow| JAMRLOW|650.124.7234|16-FEB-05|ST_CLERK|  2500|            - |       121|           50|
+|        132|        TJ|      Olson| TJOLSON|650.124.8234|10-APR-07|ST_CLERK|  2100|            - |       121|           50|
+|        133|     Jason|     Mallin| JMALLIN|650.127.1934|14-JUN-04|ST_CLERK|  3300|            - |       122|           50|
+|        134|   Michael|     Rogers| MROGERS|650.127.1834|26-AUG-06|ST_CLERK|  2900|            - |       122|           50|
+|        135|        Ki|        Gee|    KGEE|650.127.1734|12-DEC-07|ST_CLERK|  2400|            - |       122|           50|
+|        136|     Hazel| Philtanker|HPHILTAN|650.127.1634|06-FEB-08|ST_CLERK|  2200|            - |       122|           50|
+|        137|    Renske|     Ladwig| RLADWIG|650.121.1234|14-JUL-03|ST_CLERK|  3600|            - |       123|           50|
+|        138|   Stephen|     Stiles| SSTILES|650.121.2034|26-OCT-05|ST_CLERK|  3200|            - |       123|           50|
+|        139|      John|        Seo|    JSEO|650.121.2019|12-FEB-06|ST_CLERK|  2700|            - |       123|           50|
+|        140|    Joshua|      Patel|  JPATEL|650.121.1834|06-APR-06|ST_CLERK|  2500|            - |       123|           50|
++-----------+----------+-----------+--------+------------+---------+--------+------+--------------+----------+-------------+
+
+>>> empDf.filter(col("SALARY")<5000).select("EMPLOYEE_ID","FIRST_NAME","SALARY").show(30)
++-----------+----------+------+
+|EMPLOYEE_ID|FIRST_NAME|SALARY|
++-----------+----------+------+
+|        198|    Donald|  2600|
+|        199|   Douglas|  2600|
+|        200|  Jennifer|  4400|
+|        105|     David|  4800|
+|        106|     Valli|  4800|
+|        107|     Diana|  4200|
+|        115| Alexander|  3100|
+|        116|    Shelli|  2900|
+|        117|     Sigal|  2800|
+|        118|       Guy|  2600|
+|        119|     Karen|  2500|
+|        125|     Julia|  3200|
+|        126|     Irene|  2700|
+|        127|     James|  2400|
+|        128|    Steven|  2200|
+|        129|     Laura|  3300|
+|        130|     Mozhe|  2800|
+|        131|     James|  2500|
+|        132|        TJ|  2100|
+|        133|     Jason|  3300|
+|        134|   Michael|  2900|
+|        135|        Ki|  2400|
+|        136|     Hazel|  2200|
+|        137|    Renske|  3600|
+|        138|   Stephen|  3200|
+|        139|      John|  2700|
+|        140|    Joshua|  2500|
++-----------+----------+------+

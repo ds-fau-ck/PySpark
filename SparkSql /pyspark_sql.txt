@@ -171,6 +171,7 @@ only showing top 20 rows
 |        110|      John|      9200|
 +-----------+----------+----------+
 only showing top 20 rows
+####To Update existing column
 >>> empDf.withColumn("SALARY",col("SALARY")-1000).select("EMPLOYEE_ID","FIRST_NAME","SALARY").show()
 +-----------+----------+------+
 |EMPLOYEE_ID|FIRST_NAME|SALARY|

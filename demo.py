@@ -2,6 +2,11 @@
 abstraction->This is able to handle any type of data----Semistructured, unstructured, completely unstructered data. To handle this kind of data in spark we have concept of Data Frame.
 Data Fram is also a RDD but it is just wraper on rdd which will only capable enough to hold the structured data only row columnar data but everything in spark, that object which is holding some data
 and will be know as RDD and it will follow all those properties. 
+The basic abstraction of Spark is RDD. This is a type of data structure available in Spark that will hold your actual data.
+abstraction: This is able to handle any type of data—semistructured, unstructured, or completely unstructured data.
+To handle this kind of data in Spark, we have the concept of a data frame.
+Data Fram is also a RDD, but it is just a wrapper on the RDD, which will only be capable of holding the structured data, only row-column data,
+but everything in Spark, that object that is holding some data.and will be known as RDD, and it will follow all those properties.
 #necessary libraries of pyspark
 from pyspark.sql import SparkSession
 from pyspark.sql.types import StructType,StructField, StringType, IntegerType

@@ -40,9 +40,27 @@ hadoop fs -ls /user
 hadoop fs -ls/user/abc
 #### to make folder in HDFS#######
 hadoop fs -mkdir /input_data
-###To move file in the HDFS newly created folder####
+###To upload file in the HDFS newly created folder####
 hadoop fs -put department.csv /input_data
 hadoop fs -ls /input_data
+https://spark.apache.org/docs/latest/sql-data-sources-csv.html
+df1=spark.read.option("header",True).option("delimiter","|").option("").csv("/input_data/departments.csv")
+#####If the HDFS file system availavle at somewhere else########
+df1=spark.read.option("header",True).option("delimiter","|").option("").csv(" hdfs://name node:8888 end_point(ip addresss) /input_data/departments.csv")
+>>> df1=spark.read.option("header",True).csv("/input_data/departments.csv")
+>>> df1.printSchema()
+root
+ |-- DEPARTMENT_ID: string (nullable = true)
+ |-- DEPARTMENT_NAME: string (nullable = true)
+ |-- MANAGER_ID: string (nullable = true)
+ |-- LOCATION_ID: string (nullable = true)
+>>> df2=spark.read.option("header",True).option("inferSchema",True).csv("/input_data/departments.csv")
+>>> df2.printSchema()
+root
+ |-- DEPARTMENT_ID: integer (nullable = true)
+ |-- DEPARTMENT_NAME: string (nullable = true)
+ |-- MANAGER_ID: string (nullable = true)
+ |-- LOCATION_ID: integer (nullable = true)
 
 
 

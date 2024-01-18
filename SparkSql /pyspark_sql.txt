@@ -1,0 +1,1 @@
+https://sparkbyexamples.com/pyspark/pyspark-sql-types-datatype-with-examples/?utm_content=cmp-true

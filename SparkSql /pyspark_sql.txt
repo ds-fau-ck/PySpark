@@ -38,4 +38,12 @@ hadoof fs -ls /
 ########Naviage to the folder
 hadoop fs -ls /user
 hadoop fs -ls/user/abc
+#### to make folder in HDFS#######
+hadoop fs -mkdir /input_data
+###To move file in the HDFS newly created folder####
+hadoop fs -put department.csv /input_data
+hadoop fs -ls /input_data
+
+
+
 

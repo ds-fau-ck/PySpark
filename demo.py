@@ -14,8 +14,12 @@ from pyspark.sql.types import StructType,StructField, StringType, IntegerType
 
 if __name__ == '__main__':
     #Creating spark session
+    #SparkSession->This will be treated as a entry point for our spark application which will help to connect our application with the cluster.
     spark = SparkSession.builder.master("spark://localhost:7077").appName("demo").getOrCreate()
-
+    #Spark context available as 'sc' (master = local[*], app id = local-1705557914925).
+    #master=local[*]->what is the meaning of * here?---Lets say we have a machine with 8 core and on that machine i have initiated my pyspark shell.
+    # If i mention the local[*]->* ultimately means leats say your machine has a 16 core so all 16 core will be used while executing any step ----transformation
+    #spark session parameters->
     #Create list of data to prepare data frame
     person_list = [("Berry","","Allen",1,"M"),
         ("Oliver","Queen","",2,"M"),

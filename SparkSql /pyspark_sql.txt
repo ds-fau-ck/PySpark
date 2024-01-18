@@ -374,3 +374,9 @@ only showing top 20 rows
 |        118|        Guy|  2600|           30|
 |        119|      Karen|  2500|           30|
 +-----------+-----------+------+-------------+
+#####duplicate checking############
+empDf.dropDuplicates().show(100)
+#####Duplicacy check in few collumn###########
+empDf.dropDuplicates(["DEPARTMENT_ID","HIRE_DATE"]).show(100)
+
+epDf.dropDuplicates(["DEPARTMENT_ID","HIRE_DATE"]).select("EMPLOYEE_ID","DEPARTMENT_ID","HIRE_DATE").show(100)

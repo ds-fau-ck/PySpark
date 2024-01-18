@@ -32,3 +32,10 @@ https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/index.html
 
     #Writing file in hadoop
     df.write.csv("record.csv")
+##############################Check any directory already created or not in HDFS file#####################
+In HDFS file system everything start from root-> Root means /
+hadoof fs -ls /
+########Naviage to the folder
+hadoop fs -ls /user
+hadoop fs -ls/user/abc
+

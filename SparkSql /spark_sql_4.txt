@@ -115,3 +115,20 @@ only showing top 20 rows
 |        139|           50|        Shipping|
 |        140|           50|        Shipping|
 +-----------+-------------+----------------+
+### Writing data to Hadoop##########
+>>> from pyspark.sql.functions import *
+>>> resultDf=empDf.join(broadcast(deptDf), empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID, "inner").select(empDf.EMPLOYEE_ID,empDf.DEPARTMENT_ID,deptDf.DEPARTMENT_NAME)
+>>> resultDf.write.option("header",True).csv("/output/result")### makin folder automatically
+### After writing data in Hadoop Checking data in Hadoop ##############
+abc@6a3e389fecd8:~/workspace$ hadoop fs -ls /
+Found 2 items
+drwxr-xr-x   - abc supergroup          0 2024-01-19 13:14 /input_data
+drwxr-xr-x   - abc supergroup          0 2024-01-19 16:13 /output
+abc@6a3e389fecd8:~/workspace$ hadoop fs -ls /output
+Found 1 items
+drwxr-xr-x   - abc supergroup          0 2024-01-19 16:13 /output/result
+abc@6a3e389fecd8:~/workspace$ hadoop fs -ls /output/result
+Found 2 items
+-rw-r--r--   1 abc supergroup          0 2024-01-19 16:13 /output/result/_SUCCESS
+-rw-r--r--   1 abc supergroup        856 2024-01-19 16:13 /output/result/part-00000-5c153ee3-4b3c-47d9-a420-c7f5ca45869c-c000.csv
+abc@6a3e389fecd8:~/workspace$ 

@@ -1,0 +1,13 @@
+Most common failure in Spark "out of memory"
+In spark there are two things driver and executor
+In executor->Lets says there is any dataframe which is very large in size and our executor is not able to handle or to store
+that much amount of data frame and if we have brdcasted it and our executor memory is not sufficient, our executor will go always out of memory.
+How to handle it?-> Try to check if there is something data frame which is actually should be used for broadcasting or try to increase executor
+memory
+In which case driver out of goes "out of memory"?------------Collect is one kind of action..when we call the collect part lets say
+empDf.collect(). In that case what will happen? where will collected data go to? It will go to executor or somewhere else?
+# When we call the action any kind of action (most important the collect() one). So basically empDf.collect() is bassically action
+when we call the collect, its trying to fetch the data whatever execution or whatever in the data frame, it will try to collect it
+and that collected data will go to driver. Lets say we are processing 15gb of data in your spark job and by mistake you call empDf.collec()
+definitely you are going to get "out of memory error" if your driver memory is not sufficient enough. for an example if your driver memory
+is 20gb only and you call empDf.collect() method on the employees data frame, you might phase out of memory error for the driver.

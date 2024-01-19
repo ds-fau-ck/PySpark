@@ -188,3 +188,18 @@ EMPLOYEE_ID,DEPARTMENT_ID,DEPARTMENT_NAME
 abc@6a3e389fecd8:~/workspace$ 
 >>> resultDf.write.mode("overwrite").option("header",True).save("/output/result")###bydefault save in parque file
 >>> resultDf.write.mode("overwrite").option("header",True).format("csv").save("/output/result")
+#####Partitionaing##############
+>>>resultDf.write.mode("overwrite").partitionBy("DEPARTMENT_NAME").option("header",True).format("csv").save("/output/result") 
+abc@c7d48d3d7e61:~/workspace$ hadoop fs -ls /output/result
+Found 11 items
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Accounting
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Administration
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Executive
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Finance
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Human Resources
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=IT
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Marketing
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Public Relations
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Purchasing
+drwxr-xr-x   - abc supergroup          0 2024-01-19 22:52 /output/result/DEPARTMENT_NAME=Shipping
+-rw-r--r--   1 abc supergroup          0 2024-01-19 22:52 /output/result/_SUCCESS

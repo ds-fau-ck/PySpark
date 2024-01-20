@@ -230,3 +230,10 @@ abc@82ca6ab8e880:~/workspace$ hadoop fs -ls /output/result
 Found 2 items
 -rw-r--r--   1 abc supergroup          0 2024-01-20 14:05 /output/result/_SUCCESS
 -rw-r--r--   1 abc supergroup        856 2024-01-20 14:05 /output/result/part-00000-c90553ee-b326-47aa-93de-f68c488b71bd-c000.csv
+####Appending a file############
+>>> resultDf.write.mode("append").option("header",True).format("csv").save("/output/result")
+abc@82ca6ab8e880:~/workspace$ hadoop fs -ls /output/result
+Found 3 items
+-rw-r--r--   1 abc supergroup          0 2024-01-20 14:15 /output/result/_SUCCESS
+-rw-r--r--   1 abc supergroup        856 2024-01-20 14:15 /output/result/part-00000-40d9c43b-5d3e-4958-a683-8132601eb370-c000.csv
+-rw-r--r--   1 abc supergroup        856 2024-01-20 14:05 /output/result/part-00000-c90553ee-b326-47aa-93de-f68c488b71bd-c000.csv

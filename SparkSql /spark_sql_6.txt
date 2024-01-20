@@ -261,3 +261,10 @@ abc@82ca6ab8e880:~/workspace$ hadoop fs -cat /output/result/DEPARTMENT_NAME=Acco
 EMPLOYEE_ID,DEPARTMENT_ID
 205,110
 206,110
+###How many pertitions############
+ empDf.rdd.getNumPartitions()
+1
+###Creating more partitions
+>>> newDf=resultDf.repartition(10)
+>>> newDf.rdd.getNumPartitions()
+10

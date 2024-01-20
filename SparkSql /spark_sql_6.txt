@@ -264,7 +264,14 @@ EMPLOYEE_ID,DEPARTMENT_ID
 ###How many pertitions############
  empDf.rdd.getNumPartitions()
 1
-###Creating more partitions
+###Creating more and less number of partitions
 >>> newDf=resultDf.repartition(10)
 >>> newDf.rdd.getNumPartitions()
+10
+>>> repart_newDf=newDf.repartition(2)
+>>> repart_newDf.rdd.getNumPartitions()
+2
+#############In Coelease################
+>>> coe_new_Df=newDf.coalesce(20)
+>>> coe_new_Df.rdd.getNumPartitions()
 10

@@ -425,3 +425,29 @@ only showing top 20 rows
 |        110|      John|     Chen|   JCHEN|515.124.4269|28-SEP-05|FI_ACCOUNT|  8200|            - |       108|          100|          100|         Finance|       108|       1700|
 +-----------+----------+---------+--------+------------+---------+----------+------+--------------+----------+-------------+-------------+----------------+----------+-----------+
 only showing top 20 rows
+>>> empDf.join(deptDf, empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID, "inner").select(empDf.EMPLOYEE_ID, empDf.DEPARTMENT_ID, deptDf.DEPARTMENT_NAME).show()
++-----------+-------------+---------------+
+|EMPLOYEE_ID|DEPARTMENT_ID|DEPARTMENT_NAME|
++-----------+-------------+---------------+
+|        200|           10| Administration|
+|        202|           20|      Marketing|
+|        201|           20|      Marketing|
+|        119|           30|     Purchasing|
+|        118|           30|     Purchasing|
+|        117|           30|     Purchasing|
+|        116|           30|     Purchasing|
+|        115|           30|     Purchasing|
+|        114|           30|     Purchasing|
+|        203|           40|Human Resources|
+|        140|           50|       Shipping|
+|        139|           50|       Shipping|
+|        138|           50|       Shipping|
+|        137|           50|       Shipping|
+|        136|           50|       Shipping|
+|        135|           50|       Shipping|
+|        134|           50|       Shipping|
+|        133|           50|       Shipping|
+|        132|           50|       Shipping|
+|        131|           50|       Shipping|
++-----------+-------------+---------------+
+only showing top 20 rows

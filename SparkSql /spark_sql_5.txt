@@ -357,3 +357,18 @@ only showing top 20 rows
 |        139|  2700|
 |        140|  2500|
 +-----------+------+
+>>> spark.sql("select department_id, sum(salary) as sum_salary from employee group by department_id").show()
++-------------+----------+
+|department_id|sum_salary|
++-------------+----------+
+|           20|     19000|
+|           40|      6500|
+|          100|     51608|
+|           10|      4400|
+|           50|     85600|
+|           70|     10000|
+|           90|     58000|
+|           60|     28800|
+|          110|     20308|
+|           30|     24900|
++-------------+----------+

@@ -451,3 +451,28 @@ only showing top 20 rows
 |        131|           50|       Shipping|
 +-----------+-------------+---------------+
 only showing top 20 rows
+>>> empDf.join(deptDf, empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID, "left").select(empDf.EMPLOYEE_ID, empDf.DEPARTMENT_ID, deptDf.DEPARTMENT_NAME).show()
++-----------+-------------+----------------+
+|EMPLOYEE_ID|DEPARTMENT_ID| DEPARTMENT_NAME|
++-----------+-------------+----------------+
+|        198|           50|        Shipping|
+|        199|           50|        Shipping|
+|        200|           10|  Administration|
+|        201|           20|       Marketing|
+|        202|           20|       Marketing|
+|        203|           40| Human Resources|
+|        204|           70|Public Relations|
+|        205|          110|      Accounting|
+|        206|          110|      Accounting|
+|        100|           90|       Executive|
+|        101|           90|       Executive|
+|        102|           90|       Executive|
+|        103|           60|              IT|
+|        104|           60|              IT|
+|        105|           60|              IT|
+|        106|           60|              IT|
+|        107|           60|              IT|
+|        108|          100|         Finance|
+|        109|          100|         Finance|
+|        110|          100|         Finance|
++-----------+-------------+----------------+

@@ -76,3 +76,56 @@ pyspark.sql.utils.AnalysisException: grouping expressions sequence is empty, and
 Aggregate [EMPLOYEE_ID#16, sum(salary#23) AS sum_salary#176L]
 +- Relation [EMPLOYEE_ID#16,FIRST_NAME#17,LAST_NAME#18,EMAIL#19,PHONE_NUMBER#20,HIRE_DATE#21,JOB_ID#22,SALARY#23,COMMISSION_PCT#24,MANAGER_ID#25,DEPARTMENT_ID#26] csv
 
+>>> empDf.select("EMPLOYEE_ID","FIRST_NAME","DEPARTMENT_ID").orderBy("salary").show()
++-----------+----------+-------------+
+|EMPLOYEE_ID|FIRST_NAME|DEPARTMENT_ID|
++-----------+----------+-------------+
+|        132|        TJ|           50|
+|        136|     Hazel|           50|
+|        128|    Steven|           50|
+|        127|     James|           50|
+|        135|        Ki|           50|
+|        131|     James|           50|
+|        119|     Karen|           30|
+|        140|    Joshua|           50|
+|        198|    Donald|           50|
+|        199|   Douglas|           50|
+|        118|       Guy|           30|
+|        126|     Irene|           50|
+|        139|      John|           50|
+|        130|     Mozhe|           50|
+|        117|     Sigal|           30|
+|        116|    Shelli|           30|
+|        134|   Michael|           50|
+|        115| Alexander|           30|
+|        125|     Julia|           50|
+|        138|   Stephen|           50|
++-----------+----------+-------------+
+only showing top 20 rows
+>>> empDf.select("EMPLOYEE_ID","FIRST_NAME","DEPARTMENT_ID","salary").orderBy("salary").show()
++-----------+----------+-------------+------+
+|EMPLOYEE_ID|FIRST_NAME|DEPARTMENT_ID|salary|
++-----------+----------+-------------+------+
+|        132|        TJ|           50|  2100|
+|        136|     Hazel|           50|  2200|
+|        128|    Steven|           50|  2200|
+|        127|     James|           50|  2400|
+|        135|        Ki|           50|  2400|
+|        131|     James|           50|  2500|
+|        119|     Karen|           30|  2500|
+|        140|    Joshua|           50|  2500|
+|        198|    Donald|           50|  2600|
+|        199|   Douglas|           50|  2600|
+|        118|       Guy|           30|  2600|
+|        126|     Irene|           50|  2700|
+|        139|      John|           50|  2700|
+|        130|     Mozhe|           50|  2800|
+|        117|     Sigal|           30|  2800|
+|        116|    Shelli|           30|  2900|
+|        134|   Michael|           50|  2900|
+|        115| Alexander|           30|  3100|
+|        125|     Julia|           50|  3200|
+|        138|   Stephen|           50|  3200|
++-----------+----------+-------------+------+
+only showing top 20 rows
+

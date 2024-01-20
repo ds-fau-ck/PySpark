@@ -502,3 +502,29 @@ only showing top 20 rows
 |        131|           50|       Shipping|
 +-----------+-------------+---------------+
 only showing top 20 rows
+>>> empDf.join(deptDf, empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID, "fullouter").select(empDf.EMPLOYEE_ID, empDf.DEPARTMENT_ID, deptDf.DEPARTMENT_NAME).show()
++-----------+-------------+---------------+
+|EMPLOYEE_ID|DEPARTMENT_ID|DEPARTMENT_NAME|
++-----------+-------------+---------------+
+|        200|           10| Administration|
+|        201|           20|      Marketing|
+|        202|           20|      Marketing|
+|        114|           30|     Purchasing|
+|        115|           30|     Purchasing|
+|        116|           30|     Purchasing|
+|        117|           30|     Purchasing|
+|        118|           30|     Purchasing|
+|        119|           30|     Purchasing|
+|        203|           40|Human Resources|
+|        198|           50|       Shipping|
+|        199|           50|       Shipping|
+|        120|           50|       Shipping|
+|        121|           50|       Shipping|
+|        122|           50|       Shipping|
+|        123|           50|       Shipping|
+|        124|           50|       Shipping|
+|        125|           50|       Shipping|
+|        126|           50|       Shipping|
+|        127|           50|       Shipping|
++-----------+-------------+---------------+
+only showing top 20 rows

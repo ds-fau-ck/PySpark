@@ -277,7 +277,7 @@ only showing top 20 rows
 |          110|     20308|     12008|      8300|           10154.0|
 |           30|     24900|     11000|      2500|            4150.0|
 +-------------+----------+----------+----------+------------------+
-###With having clause#########
+###groupBy With having clause######### where or filter both will work
 >>> empDf.groupBy("DEPARTMENT_ID").agg(sum("SALARY").alias("SUM_SALARY"), max("SALARY").alias("MAX_SALARY"), min("SALARY").alias("Min_Salary"),avg("SALARY").alias("Avg_Salary")).where(col("Max_SALARY")>=10000).show()
 +-------------+----------+----------+----------+------------------+
 |DEPARTMENT_ID|SUM_SALARY|MAX_SALARY|Min_Salary|        Avg_Salary|
@@ -289,6 +289,15 @@ only showing top 20 rows
 |          110|     20308|     12008|      8300|           10154.0|
 |           30|     24900|     11000|      2500|            4150.0|
 +-------------+----------+----------+----------+------------------+
+
+>>> empDf.groupBy("DEPARTMENT_ID").agg(sum("SALARY").alias("SUM_SALARY"),avg("SALARY").alias("AVG_SALARY"),min("salary").alias("MIN_SALARY"), max("SALARY").alias("MAX_SALARY")).where(col("MIN_SALARY")<=4000).show()
++-------------+----------+------------------+----------+----------+
+|DEPARTMENT_ID|SUM_SALARY|        AVG_SALARY|MIN_SALARY|MAX_SALARY|
++-------------+----------+------------------+----------+----------+
+|           50|     85600|3721.7391304347825|      2100|      8200|
+|           30|     24900|            4150.0|      2500|     11000|
++-------------+----------+------------------+----------+----------+
+
 >>> df = empDf.withColumn("EMP_GRADE", when( col("SALARY") > 15000 , "A").when( (col("SALARY") >= 10000) & ( col("SALARY") < 15000), "B").otherwise("C"))
 >>> df.select("EMPLOYEE_ID","SALARY","EMP_GRADE").show()
 +-----------+------+---------+

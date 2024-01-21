@@ -128,6 +128,32 @@ only showing top 20 rows
 |        138|   Stephen|           50|  3200|
 +-----------+----------+-------------+------+
 only showing top 20 rows
+>>> empDf.select("employee_id","first_name","department_id","salary").orderBy(col("department_id").asc(),col("salary").desc()).show()
++-----------+----------+-------------+------+
+|employee_id|first_name|department_id|salary|
++-----------+----------+-------------+------+
+|        200|  Jennifer|           10|  4400|
+|        201|   Michael|           20| 13000|
+|        202|       Pat|           20|  6000|
+|        114|       Den|           30| 11000|
+|        115| Alexander|           30|  3100|
+|        116|    Shelli|           30|  2900|
+|        117|     Sigal|           30|  2800|
+|        118|       Guy|           30|  2600|
+|        119|     Karen|           30|  2500|
+|        203|     Susan|           40|  6500|
+|        121|      Adam|           50|  8200|
+|        120|   Matthew|           50|  8000|
+|        122|     Payam|           50|  7900|
+|        123|    Shanta|           50|  6500|
+|        124|     Kevin|           50|  5800|
+|        137|    Renske|           50|  3600|
+|        133|     Jason|           50|  3300|
+|        129|     Laura|           50|  3300|
+|        125|     Julia|           50|  3200|
+|        138|   Stephen|           50|  3200|
++-----------+----------+-------------+------+
+only showing top 20 rows
 ##############GroupBy############
 >>> empDf.groupBy("DEPARTMENT_ID").sum("SALARY").show()
 +-------------+-----------+

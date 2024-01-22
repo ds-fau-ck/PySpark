@@ -11,6 +11,13 @@ Kind of messaging system which can help us to hold the data. Messaging queses fo
  -> Messaging queues-whatever even we are producing, whatever event are getting generated 
  ->kafka messaging system for stream processing-> Whenever there is a system where records are coming in the real time we call it as a stream processing(Stream means continuous flow of data)
 
+Source App -> DB-> Kafka-> Process Engine for real time analysis->dump data for somewhere -> Destination-> Dashboard
+Kafka->3 components majorly
+      1. Producer
+      2. Consumer
+      3. Connector
+
+
 
 
 

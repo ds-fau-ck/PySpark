@@ -32,7 +32,8 @@ Kafka component:
 Kafka Architecture: Its also one kind of cluster. Cluster-> The combination of multiples commodity hardwares connected over the networks so that it will acts as a single machine.
 In a cluster there will be a multiple those comodity hardwares which are eventually call as a server.
 
-Brokers:-
+Brokers:-Brokers means servers in a cluster.
+Topics:---Small segments or a space name given within a kafka queue.
 
 
 

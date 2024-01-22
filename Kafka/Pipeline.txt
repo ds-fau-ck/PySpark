@@ -1,1 +1,8 @@
+1. Batch Data Processing- Hours, day, week, month or even year (just wait for minimum threshold time )->Hadoop, Hive and Apache spark are helpfull 
+
+2. Near Real Time
+
+3. Real Time Data Process- Kind of messaging system which can help us to hold the data.
+ ->Bank Transaction
+
 

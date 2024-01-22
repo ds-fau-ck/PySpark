@@ -18,7 +18,16 @@ Kafka->3 components majorly
       3. Connector
 
 Producer are writing the data into the kafka->publishing the data. The producer 
-Consumer are reading the data from the kafka queue ->Consumers basically subscribes 
+Consumer are reading the data from the kafka queue ->Consumers basically subscribes which are subscribing one specific space within the kafka and just listening the records from the specific kafka queue.
+Kafka component: 
+              1. Broker
+              2. Topics
+              3. Partitions
+              4. Replicas
+
+
+
+
 
 
 

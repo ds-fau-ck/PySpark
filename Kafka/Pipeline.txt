@@ -3,9 +3,14 @@
 2. Near Real Time-> more than 30s, 1m or 2 min not a completely real time but this is near real time (at least wait for few seconds)
 
 3. Real Time Data Process- Instantly-> ->Bank Transaction
+                                       ->Application for live cricket scores and aggregations
+                                       -> Gaming application (live Tournaments)
+                                       ->Trending twiter hastags
+                                       ->Any type of real time dashboards exampla are stock exchange, live count in a mall
 Kind of messaging system which can help us to hold the data. Messaging queses for real time processing- (hold the data for real time process.)
  -> Messaging queues-whatever even we are producing, whatever event are getting generated 
- ->kafka messaging system for stream processing-> Whenever there is a system where records are coming in the real time we call it as a stream processing. Stream means continuous flow of data 
+ ->kafka messaging system for stream processing-> Whenever there is a system where records are coming in the real time we call it as a stream processing(Stream means continuous flow of data)
+
 
 
 

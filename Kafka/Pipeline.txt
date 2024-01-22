@@ -24,6 +24,16 @@ Kafka component:
               2. Topics
               3. Partitions
               4. Replicas
+              5. offsets
+              6. Commits- syncronous and asyncronous
+              7. consumer Groups
+              8. Parallalism in kafka
+              9. Back Pressure
+Kafka Architecture: Its also one kind of cluster. Cluster-> The combination of multiples commodity hardwares connected over the networks so that it will acts as a single machine.
+In a cluster there will be a multiple those comodity hardwares which are eventually call as a server.
+
+Brokers:-
+
 
 
 

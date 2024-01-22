@@ -34,7 +34,7 @@ In a cluster there will be a multiple those comodity hardwares which are eventua
 
 Brokers:-Brokers means servers in a cluster.
 Topics:---Small segments or a space name given within a kafka queue.
-
+1.0.0 pause
 
 
 

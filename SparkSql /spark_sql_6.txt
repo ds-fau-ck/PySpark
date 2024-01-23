@@ -52,7 +52,9 @@ only showing top 20 rows
 |        110|      John|     Chen|   JCHEN|515.124.4269|28-SEP-05|FI_ACCOUNT|  8200|            - |       108|          100|
 +-----------+----------+---------+--------+------------+---------+----------+------+--------------+----------+-------------+
 only showing top 20 rows
->>> empDf.join(broadcast(deptDf),empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID,"inner").select(empDf.EMPLOYEE_ID,empDf.DEPARTMENT_ID,deptDf.DEPARTMENT_NAME).show(100)
+# Two data frames empDf(large data set) and deptDf(small data sets)
+#for joining reshuffle will be required and after applying broadcast join, small data frame will be cached in each executor.
+>>>empDf.join(broadcast(deptDf),empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID,"inner").select(empDf.EMPLOYEE_ID,empDf.DEPARTMENT_ID,deptDf.DEPARTMENT_NAME).show(100)
 +-----------+-------------+----------------+
 |EMPLOYEE_ID|DEPARTMENT_ID| DEPARTMENT_NAME|
 +-----------+-------------+----------------+

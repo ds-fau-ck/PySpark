@@ -110,7 +110,7 @@ only showing top 20 rows
 |        140|           50|        Shipping|
 +-----------+-------------+----------------+
 
->>> resultDf=empDf.join(broadcast(deptDf),empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID,"inner").select(empDf.EMPLOYEE_ID,empDf.DEPARTMENT_ID,deptDf.DEPARTMENT_NAME).show(100)
+>>>resultDf=empDf.join(broadcast(deptDf),empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID,"inner").select(empDf.EMPLOYEE_ID,empDf.DEPARTMENT_ID,deptDf.DEPARTMENT_NAME).show(100)
 +-----------+-------------+----------------+
 |EMPLOYEE_ID|DEPARTMENT_ID| DEPARTMENT_NAME|
 +-----------+-------------+----------------+
@@ -165,7 +165,9 @@ only showing top 20 rows
 |        139|           50|        Shipping|
 |        140|           50|        Shipping|
 +-----------+-------------+----------------+
->>> resultDf=empDf.join(broadcast(deptDf),empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID,"inner").select(empDf.EMPLOYEE_ID,empDf.DEPARTMENT_ID,deptDf.DEPARTMENT_NAME)
+>>>resultDf=empDf.join(broadcast(deptDf),empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID,"inner").select(empDf.EMPLOYEE_ID,empDf.DEPARTMENT_ID,deptDf.DEPARTMENT_NAME)
+###Reference of Writing option in Pyspark 
+https://sparkbyexamples.com/spark/spark-write-options/
 >>> resultDf.write.option("header",True).csv("/output/result")
 >>> resultDf.write.option("header",True).option("delimiter","|").csv("/output/result1")
 abc@82ca6ab8e880:~/workspace$ hadoop fs -cat /output/result2/part-00000-59dbcee2-cd9a-4012-b5f5-c589c540df5c-c000.csv

@@ -285,3 +285,9 @@ Coalese will use existing partitions and it might do the uneven data distributio
 >>> coe_new_Df=newDf.coalesce(20)
 >>> coe_new_Df.rdd.getNumPartitions()
 10
+>>> newDf3=newDf.coalesce(20)
+>>> newDf3.rdd.getNumPartitions()
+10
+>>> newDf4=newDf.coalesce(5)
+>>> newDf4.rdd.getNumPartitions()
+5

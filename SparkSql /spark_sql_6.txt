@@ -266,6 +266,10 @@ abc@82ca6ab8e880:~/workspace$ hadoop fs -cat /output/result/DEPARTMENT_NAME=Acco
 EMPLOYEE_ID,DEPARTMENT_ID
 205,110
 206,110
+###########Why repartition can be helpfull?######
+->because it does even data distribution
+->Dasiadvantage-------full shuffle---------
+Coalese-> Only decrese the partition. Can not increase the partitions
 ###How many pertitions############
  empDf.rdd.getNumPartitions()
 1

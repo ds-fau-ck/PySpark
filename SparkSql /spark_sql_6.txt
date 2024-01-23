@@ -269,7 +269,8 @@ EMPLOYEE_ID,DEPARTMENT_ID
 ###########Why repartition can be helpfull?######
 ->because it does even data distribution
 ->Dasiadvantage-------full shuffle---------
-Coalese-> Only decrese the partition. Can not increase the partitions
+Coalese-> Only decrese the partition. Can not increase the partitions. 
+Coalese will use existing partitions and it might do the uneven data distributions.
 ###How many pertitions############
  empDf.rdd.getNumPartitions()
 1

@@ -167,6 +167,7 @@ only showing top 20 rows
 +-----------+-------------+----------------+
 >>>resultDf=empDf.join(broadcast(deptDf),empDf.DEPARTMENT_ID==deptDf.DEPARTMENT_ID,"inner").select(empDf.EMPLOYEE_ID,empDf.DEPARTMENT_ID,deptDf.DEPARTMENT_NAME)
 ###Reference of Writing option in Pyspark 
+https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrameWriter.options.html
 https://sparkbyexamples.com/spark/spark-write-options/
 >>> resultDf.write.option("header",True).csv("/output/result")
 >>> resultDf.write.option("header",True).option("delimiter","|").csv("/output/result1")

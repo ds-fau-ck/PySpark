@@ -291,3 +291,6 @@ Coalese will use existing partitions and it might do the uneven data distributio
 >>> newDf4=newDf.coalesce(5)
 >>> newDf4.rdd.getNumPartitions()
 5
+Number of Job= Number of actions called in Applications
+Stages---> The number of shuffle operations (wide transformations)
+Tasks----> Number of partitions to be process will be the total number of task.

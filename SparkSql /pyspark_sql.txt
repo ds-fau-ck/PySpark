@@ -2,7 +2,8 @@ https://sparkbyexamples.com/pyspark/pyspark-sql-types-datatype-with-examples/?ut
 https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/index.html
 ########Spark SQL###########
 https://spark.apache.org/docs/3.2.0/sql-programming-guide.html
-
+####Data Source############
+https://spark.apache.org/docs/latest/sql-data-sources-generic-options.html
 ###############Creating Data Frame##############
  #Create list of data to prepare data frame
     person_list = [("Berry","","Allen",1,"M"),

@@ -18,20 +18,32 @@ Kafka->3 components majorly
 Producer are writing the data into the kafka->publishing the data. The producer 
 Consumer are reading the data from the kafka queue ->Consumers basically subscribes which are subscribing one specific space within the kafka and just listening the records from the specific kafka queue.
 Kafka component: 
-              1. Broker
-              2. Topics
-              3. Partitions
-              4. Replicas
-              5. offsets
-              6. Commits- syncronous and asyncronous
-              7. consumer Groups
-              8. Parallalism in kafka
-              9. Back Pressure
+  1. Broker---
+  2. Topics
+  3. Partitions
+  4. Replicas
+  5. offsets
+  6. Commits- syncronous and asyncronous
+  7. consumer Groups
+  8. Parallalism in kafka
+  9. Back Pressure
 Kafka Architecture: Its also one kind of cluster. Cluster-> The combination of multiples commodity hardwares connected over the networks so that it will acts as a single machine.
 In a cluster there will be a multiple those comodity hardwares which are eventually call as a server.
+Leader-> 
+Brokers:-Brokers means servers in a cluster.(Actual need of Brokers to store the data)>Horizontally scallable the kafka
 
-Brokers:-Brokers means servers in a cluster.
-Topics:---Small segments or a space name given within a kafka queue.
+Topics:---Small segments or a space name given within a kafka queue. Each producer has it own topics.One topic has multiple partition where we will writing the data.
+
+for example we have 3 apps, PayApp, Fapp and PrimeApp. In Pay app I will explicitely mention that in which topics of kafka these 3 app can write.
+Message=I record----- whatever messages the particular producer writing into that topic, those will go actually into the partition.
+Whenever kafka write any message into the particular partition, message will be written one particular offset or one particular index. So that will be known as a offset value. 
+Current partition index=offset, offset is someting a incremented value and will be a unique id for that particular message within one particular partition.
+Order of massage will be maintain within the partition
+Partitions-mainly use for fault tolerance and parallelism
+How we will be achieve falult tolerance? creating duplicates and replicas.
+
+
+
 1.0.0 pause
 
 

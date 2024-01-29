@@ -41,11 +41,17 @@ Current partition index=offset, offset is someting a incremented value and will 
 Order of massage will be maintain within the partition
 Partitions-mainly use for fault tolerance and parallelism
 How we will be achieve falult tolerance? creating duplicates and replicas.
-
-
-
 1.0.0 pause
 
+Consumer parts:
+Consumer will subscribes a particular topic first and then it is eligible to listen to the particular topics-> they need to litschen-Continuously poling(after 2 or 3 seconds just send the poll request in order to check wheather new records have been inserted ito the any of these partiton of a kafka topics)
+Consumer properties
+->Latest(Read data from each partition from current offset)
+->Earliest(Read for each partition from start offset)
+Biggest challange in particular real time applications
+Question->How the consumer is ging to know that previously which record i have read and in the next iteration from which location i will start to read?
+Consumer needs to do the offset commit.
+lets say partiton 0 and r1 and r2 record are there.
 
 
 

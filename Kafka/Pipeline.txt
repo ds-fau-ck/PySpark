@@ -52,6 +52,9 @@ Biggest challange in particular real time applications
 Question->How the consumer is ging to know that previously which record i have read and in the next iteration from which location i will start to read?
 Consumer needs to do the offset commit.
 lets say partiton 0 and r1 and r2 record are there.
+## Aceiving the parallelism(get the access of more number of partitions)
+backpressure->because of speed mismatch and how do we deal with this?
+Ans: Increase the consumer
 
 
 

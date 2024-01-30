@@ -55,9 +55,7 @@ lets say partiton 0 and r1 and r2 record are there.
 ## Aceiving the parallelism(get the access of more number of partitions)
 backpressure->because of speed mismatch and how do we deal with this?
 Ans: Increase the consumer
-
-
-
+Schema Registry for all the topic->It will maintain what kind of schema is expected for this particular topics
 
 
 

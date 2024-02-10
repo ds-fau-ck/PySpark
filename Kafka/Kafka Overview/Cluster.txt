@@ -1,1 +1,1 @@
-
+Cluster->Group of Computer connected through network and can be utilized as single computer with huge capacity to store and process data.

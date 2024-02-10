@@ -1,1 +1,6 @@
 Cluster->Group of Computer connected through network and can be utilized as single computer with huge capacity to store and process data.
+
+Topic->Partition 1....n
+Data loss->How you make you data highly available->Reflication factor available in Kafka
+Same partition can be replicated in some other partition, for example if one broker is failure, another broker is available.
+Throughput->How you will be able to give high throughput?-> The amount of data you can send at a time to kafka.
